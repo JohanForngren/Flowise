@@ -1040,6 +1040,7 @@ const compileSeqAgentsGraph = async (params: SeqAgentsGraphParams) => {
             }
         }
         return await graph.stream(humanMsg, {
+            recursionLimit: 100,
             callbacks: [loggerHandler, ...callbacks],
             configurable: config
         })
